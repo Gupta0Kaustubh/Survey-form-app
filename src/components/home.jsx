@@ -3,7 +3,16 @@ import '../styles/home.css'
 import {Button} from 'react-bootstrap';
 import background from '../assets/home-back.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { useNavigate } from 'react-router-dom';
 export const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+      // Redirect to the admin login page
+      navigate('/admin-login');
+  };
   return (
     <div className='container'>
         
@@ -17,7 +26,7 @@ export const Home = () => {
 </div>
 <div className='buttons-home'>
 <Button variant="outline-light">Take a Survey</Button>
-<Button variant="outline-light">Admin Login</Button>
+<Button onClick={handleLoginClick}  variant="outline-light">Admin Login</Button>
 </div>
 <img src={background} style={{width:"22%"}}/>
     </div>
