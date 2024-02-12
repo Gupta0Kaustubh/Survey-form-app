@@ -1,6 +1,6 @@
 body{
     justify-content: center;
-    background:linear-gradient(to right, #212529 50%, #343a40 50%);
+    background:linear-gradient(to right, #212529 50%, #3e4449 50%);
     color: #ffffff !important;
     display:block !important;
     width: 100%;
@@ -13,6 +13,7 @@ body{
     justify-content: center;
 }
 .header{
+    margin-top: 2%;
     display: flex;
     font-size: 80px;
     justify-content: center;
@@ -22,7 +23,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 5%;
+    margin: 4%;
     gap: 25px;
 }
 .buttons-home Button{
