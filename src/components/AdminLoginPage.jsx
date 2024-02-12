@@ -1,20 +1,23 @@
 // src/components/AdminLoginPage.jsx
-
+import '../styles/AdminLogin.css'
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 function AdminLoginPage() {
     // Your admin login form and logic go here
     return (
+        
         <div className='container align-items-center justify-content-center ' style={{paddingTop:"130px"}}>
-           <Form className='border border-5 p-5 mt-5 rounded' style={{color:"white"}}>
+             <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Comfortaa"></link>
+           <Form id= "signup-container" className='p-5 mt-5' style={{color:"white",width:"500px"}}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label className='fw-bold' style={{fontFamily:"comfortaa"}}>Username</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
       </Form.Group>
       
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label className='fw-bold' style={{fontFamily:"comfortaa"}}>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
       
@@ -22,6 +25,7 @@ function AdminLoginPage() {
         Submit
       </Button>
     </Form>
+    
          </div>
     );
 }
