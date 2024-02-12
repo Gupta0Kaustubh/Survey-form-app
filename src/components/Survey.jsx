@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Styles/survey.css'
 import { Button } from 'react-bootstrap';
-import Thankyou from './Thankyou'
 
 const questions = [{
   question: "How long have you been using our product/service?",
@@ -150,6 +149,10 @@ const Survey = () => {
     }
   }
 
+  function thankyou() {
+    alert("Thankyou !!! Your form has been submitted successfully !!!");
+  }
+
   return (
     <div className='main'>
       {showResult === true ? 
@@ -161,7 +164,7 @@ const Survey = () => {
     <div class="form-floating">
       <textarea class="form-control textarea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
     </div>
-    <button className='submit' type="button" class="btn btn-secondary btn-lg"><Link className='submit1' to="/thankyou">Go to Thank You Page</Link></button>
+    <button onClick={thankyou} className='submit2' type="button" class="submit2 btn btn-secondary btn-lg"><Link className='submit1' to="/main">SUBMIT FORM</Link></button>
       </div> 
         ) : <div>
           <div>
