@@ -9,7 +9,7 @@ import Survey from './components/Survey.jsx';
 import {React, useEffect, useState} from 'react'
 function App() {
   const [response,setResponse] = useState([{
-    name: "name",
+    name: "",
     email: "",
     phone: "",
     question1: "",
@@ -39,7 +39,7 @@ function App() {
                 {/* Other routes */}
                 <Route path="/" element={<Home response={response}/>}/>
                 <Route path="/admin-login" element={<AdminLoginPage />} />
-                <Route path="/admin-details" element={<Details/>}/>
+                <Route path="/admin-details" element={<Details response={response}/>}/>
                 <Route path="/survey" element={<Survey response={response} setResponse={setResponse} />}/>
                 <Route path="/surveyquestion" element={<FirstUserInformation response={response} setResponse={setResponse}/>}/>
                 {/* ... */}
