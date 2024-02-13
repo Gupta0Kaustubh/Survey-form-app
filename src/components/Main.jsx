@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export default function Main() {
+const Main = ({userResponses, userFirstResponses}) => {
+useEffect(()=>{
+   console.log("userdata:",userResponses);
+  console.log("dadfa:",userFirstResponses);
+},[])
+ 
+
   return (
     <div>
-      Main
+      {userFirstResponses}
     </div>
   )
 }
+
+export default Main

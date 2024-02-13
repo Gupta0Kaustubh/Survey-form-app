@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './Styles/survey.css'
 import { Button } from 'react-bootstrap';
@@ -131,15 +131,22 @@ const questions = [{
   }]
 }];
 
-const Survey = () => {
+const Survey = ({ updateUserResponses }) => {
 
   const [number, setNumber] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [score, setScore] = useState(0);
-  const handleClick = (isRight) => {
-    if(isRight === true) {
-      setScore(score+1)
-    }
+  const [userResponses, setUserResponses] = useState([]);
+  const [additionalFeedback, setAdditionalFeedback] = useState('');
+
+  const handleClick = (option) => {
+
+    const response = {
+      question: questions[number].question,
+      selectedOption: option.option,
+    };
+
+    setUserResponses(prevResponses => [...prevResponses, response]);
+
     const nextQues = number+1;
     if(nextQues < questions.length){
       setNumber(nextQues)
@@ -150,7 +157,19 @@ const Survey = () => {
   }
 
   function thankyou() {
+
+    const feedbackResponse = {
+      question: 'Additional Feedback',
+      feedback: additionalFeedback
+    };
+
+    const updatedUserResponses = [...userResponses, feedbackResponse];
+    setUserResponses(updatedUserResponses);
+
     alert("Thankyou !!! Your form has been submitted successfully !!!");
+    console.log(userResponses);
+    window.location.href = '/';  
+    updateUserResponses(userResponses);
   }
 
   return (
@@ -161,10 +180,16 @@ const Survey = () => {
             <div className='question'>
             What recommendations would you offer to improve our product/service?
     </div>
-    <div class="form-floating">
-      <textarea class="form-control textarea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+    <div className="form-floating">
+    <textarea
+              className="form-control textarea"
+              placeholder="Leave a comment here"
+              id="floatingTextarea"
+              value={additionalFeedback}
+              onChange={(e) => setAdditionalFeedback(e.target.value)}
+            ></textarea>
     </div>
-    <button onClick={thankyou} className='submit2' type="button" class="submit2 btn btn-secondary btn-lg"><Link className='submit1' to="/main">SUBMIT FORM</Link></button>
+    <button onClick={thankyou} type="button" className="submit2 btn btn-secondary btn-lg"><Link className='submit1'>SUBMIT FORM</Link></button>
       </div> 
         ) : <div>
           <div>
@@ -176,9 +201,9 @@ const Survey = () => {
     </div>
     <div className='answers'>
     {questions[number].options.map((val, ind) => (
-      <div className='answer'>
+      <div className='answer' key={ind}>
         <div className='no'>{ind+1})</div>
-        <Button className='button' variant="outline-light" onClick={() => handleClick(val.isRight)}>{val.option}</Button>{' '}
+        <Button className='button' variant="outline-light" onClick={() => handleClick(val)}>{val.option}</Button>{' '}
       </div>
     ))}
       </div>
