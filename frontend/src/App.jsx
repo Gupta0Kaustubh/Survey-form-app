@@ -6,6 +6,7 @@ import Details from './components/Details.jsx'
 import FirstUserInformation from './components/FirstUserInformation.jsx'
 import Survey from './components/Survey.jsx';
 import {React, useState} from 'react'
+import { Warehouse } from './components/warehouse.jsx';
 function App() {
   const [response,setResponse] = useState([{
     name: "name",
@@ -25,6 +26,7 @@ function App() {
   return (
     <>
     <Router>
+      <Warehouse>
             <Routes>
                 {/* Other routes */}
                 <Route path="/" element={<Home response={response}/>}/>
@@ -34,6 +36,7 @@ function App() {
                 <Route path="/surveyquestion" element={<FirstUserInformation response={response} setResponse={setResponse}/>}/>
                 {/* ... */}
             </Routes>
+            </Warehouse>
         </Router>
     </>
   )
