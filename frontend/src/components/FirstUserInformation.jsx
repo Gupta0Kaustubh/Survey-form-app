@@ -3,12 +3,20 @@ import React from 'react'
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Survey from './Survey';
 import { useNavigate } from 'react-router-dom';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { Button } from 'react-bootstrap';
+import { IoIosArrowForward } from "react-icons/io";
 const FirstUserInformation = () => {
     const navigate = useNavigate()
+
+    
     
   return (
       <div className='main'>
+          
           <h1 className='heading'>Survey Form</h1>
+          
+          <form onSubmit={()=>navigate("/survey")}>
           <table className='table-input'>
               <tr>
                   <th className='headin'>Full Name : </th>
@@ -29,10 +37,10 @@ const FirstUserInformation = () => {
                   </td>
               </tr>
           </table>
-          <div onClick={()=>{navigate("/survey")}} className='arrow'>
-              <BsArrowRightSquareFill color='white' fontSize={48} className='arrow' />
-          </div>
-          
+          <Button variant="outline-light" type="submit">
+              Proceed  <IoIosArrowForward /></Button>
+      
+          </form>
     </div>
   )
 }
