@@ -6,7 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
-export const Home = () => {
+export const Home = ({response}) => {
+
+  console.log(response);
 
   const navigate = useNavigate();
 

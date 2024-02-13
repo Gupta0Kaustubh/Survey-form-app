@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/survey.css'
 import { Button } from 'react-bootstrap';
+import { FaArrowCircleLeft } from "react-icons/fa";
+
 
 const questions = [{
   question: "How long have you been using our product/service?",
@@ -131,12 +133,21 @@ const questions = [{
   }]
 }];
 
-const Survey = () => {
+const Survey = ({response,setResponse}) => {
 
   const [number, setNumber] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
-  const handleClick = (isRight) => {
+  const [comment, setComment] = useState('');
+  const handleClick = (isRight, val) => {
+
+    var value =response
+
+    const selectedOption = questions[number].options.find(option => option.option === val.option);
+    value[0][`question${number + 1}`] = selectedOption.option
+    setResponse(value)
+    console.log(response)
+    
     if(isRight === true) {
       setScore(score+1)
     }
@@ -149,7 +160,22 @@ const Survey = () => {
     }
   }
 
+  const handleCommentChange = (e) => {
+    setComment(e.target.value); // Update textarea content in state
+  };
+
+  const goToPreviousQuestion = () => {
+    const prevQues = number - 1;
+    if (prevQues >= 0) {
+      setNumber(prevQues);
+    }
+  };
+
   function thankyou() {
+    var valuee = response;
+    valuee[0].comment = comment; // Append textarea content to response
+    setResponse(valuee);
+    console.log(response)
     alert("Thankyou !!! Your form has been submitted successfully !!!");
   }
 
@@ -161,29 +187,34 @@ const Survey = () => {
             <div className='question'>
             What recommendations would you offer to improve our product/service?
     </div>
-    <div class="form-floating">
-      <textarea class="form-control textarea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+    <div className="form-floating">
+      <textarea className="form-control textarea" value={comment} onChange={handleCommentChange} placeholder="Leave a comment here" id="floatingTextarea"></textarea>
     </div>
-    <button onClick={thankyou} className='submit2' type="button" class="submit2 btn btn-secondary btn-lg"><Link className='submit1' to="/main">SUBMIT FORM</Link></button>
+    <button onClick={thankyou} type="button" className="submit2 btn btn-secondary btn-lg"><Link className='submit1' to="/">SUBMIT FORM</Link></button>
       </div> 
         ) : <div>
           <div>
     <h1 className='heading'>Survey Form</h1>
     <div>
+      <div className='page_direction'>
       <div className='quesandans'>
       <div className='question'>
       {number+1}. {questions[number].question}
     </div>
     <div className='answers'>
     {questions[number].options.map((val, ind) => (
-      <div className='answer'>
+      <div className='answer' key={ind}>
         <div className='no'>{ind+1}</div>
-        <Button className='button' variant="outline-light" onClick={() => handleClick(val.isRight)}>{val.option}</Button>{' '}
+        <Button className='button' variant="outline-light" onClick={() => handleClick(val.isRight, val)}>{val.option}</Button>{' '}
       </div>
     ))}
       </div>
-    
     </div>
+    <div>
+      <FaArrowCircleLeft fontSize={40} onClick={goToPreviousQuestion} />
+    </div>
+      </div>
+      
     
     </div>
     

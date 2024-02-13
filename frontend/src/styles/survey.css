@@ -24,6 +24,13 @@ body{
     font-weight: 500;
     color: #8d8585;
 }
+
+.page_direction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
    
 
 .answers{
