@@ -28,7 +28,7 @@ export const Home = ({response}) => {
     </p>
 </div>
 <div className='buttons-home'>
-<Button onClick={()=>{navigate("/surveyquestion")}} variant="outline-light">Take a Survey <IoIosArrowForward /> </Button>
+<Button onClick={()=>{navigate("/topic")}} variant="outline-light">Take a Survey <IoIosArrowForward /> </Button>
 <Button onClick={handleLoginClick}  variant="outline-light">Admin Login</Button>
 </div>
 <img src={background} style={{width:"22%"}}/>

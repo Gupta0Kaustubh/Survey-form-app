@@ -7,9 +7,11 @@ import FirstUserInformation from './components/FirstUserInformation.jsx'
 import Survey from './components/Survey.jsx';
 import {React, useState} from 'react'
 import { Warehouse } from './components/warehouse.jsx';
+import Topic from './components/Topic.jsx';
 function App() {
   const [response,setResponse] = useState([{
-    name: "name",
+    product:"",
+    name: "",
     email: "",
     phone: "",
     question1: "",
@@ -32,6 +34,7 @@ function App() {
                 <Route path="/" element={<Home response={response}/>}/>
                 <Route path="/admin-login" element={<AdminLoginPage />} />
                 <Route path="/admin-details" element={<Details/>}/>
+                <Route path="/topic" element={<Topic response={response} setResponse={setResponse}/>}/>
                 <Route path="/survey" element={<Survey response={response} setResponse={setResponse} />}/>
                 <Route path="/surveyquestion" element={<FirstUserInformation response={response} setResponse={setResponse}/>}/>
                 {/* ... */}

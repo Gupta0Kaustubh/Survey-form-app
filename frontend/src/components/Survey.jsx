@@ -3,6 +3,7 @@ import { Link,useNavigate } from 'react-router-dom';
 import '../styles/survey.css'
 import { Button } from 'react-bootstrap';
 import { FaArrowCircleLeft } from "react-icons/fa";
+import { addSurvey } from '../../utils/HandleApi';
 import { useSupplier } from './warehouse';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -28,6 +29,7 @@ const Survey = ({response,setResponse}) => {
     const selectedOption = supplier.questions[number].options.find(option => option.option === val.option);
     value[0][`questions${number + 1}`] = selectedOption.option
     setResponse(value)
+    // addSurvey(value)
     console.log(response)
     
    
@@ -59,11 +61,12 @@ const Survey = ({response,setResponse}) => {
     var valuee = response;
     valuee[0].comment = comment; // Append textarea content to response
     setResponse(valuee);
+    console.log(response)
+    addSurvey(valuee)
     toast.success("Thankyou, Redirecting to Home !");
     setTimeout(()=>{
       navigate("/")
     },3000)
-
   }
 
   return (

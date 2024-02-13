@@ -6,6 +6,7 @@ module.exports.getSurvey = async (req,res) => {
 }
 
 module.exports.createSurvey = async (req,res) => {
+    console.log(req)
     const text = req.body
 
     SurveyModel

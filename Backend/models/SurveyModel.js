@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const surveySchema = new mongoose.Schema({
     response:
-    {
+    {   product: String,
         name: String,
         email: String,
         phone:  String,
@@ -21,6 +21,6 @@ const surveySchema = new mongoose.Schema({
             }
 })
 
-const Survey = mongoose.model('Survey',surveySchema);
+const Survey = mongoose.model('surveys',surveySchema);
 
 module.exports = Survey;

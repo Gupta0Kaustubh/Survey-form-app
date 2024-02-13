@@ -15,7 +15,8 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const URL = "mongodb+srv://sumitkumar:Jvt5sSKlwdMho2I3@cluster0.uvyjppv.mongodb.net/?retryWrites=true&w=majority";
+    // const URL = "mongodb+srv://sumitkumar:Jvt5sSKlwdMho2I3@cluster0.uvyjppv.mongodb.net/?retryWrites=true&w=majority";
+      const URL = "mongodb://localhost:27017/surveyform"
     const conn = await mongoose.connect(URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
