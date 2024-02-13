@@ -85,7 +85,7 @@ const Survey = ({response,setResponse}) => {
       />
       {showResult === true ? 
         (<div className='submit form'>
-          <h1 className='heading'>Additional Feedback</h1>
+          <h1 className='heading' style={{color:"white"}}>Additional Feedback</h1>
             <p className='question'>
             What recommendations would you offer to improve our product/service?
     </p>

@@ -12,7 +12,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to right, #212529 50%, #343a40 50%);
+    background: rgb(87,134,126);
+background: linear-gradient(123deg, rgba(87,134,126,1) 0%, rgba(116,138,143,1) 53%, rgba(30,43,43,1) 100%);
     border-radius: 6px;
 }
 .heading {
