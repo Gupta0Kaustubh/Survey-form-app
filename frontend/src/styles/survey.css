@@ -31,7 +31,14 @@ body{
     align-items: center;
     flex-direction: row;
 }
-   
+
+.bgs{
+    background-color: rgb(228, 233, 238);
+    color: #343a40;
+}
+.prevbutton{
+    cursor: pointer;
+}
 
 .answers{
     display: flex;
