@@ -31,7 +31,7 @@ table{
     margin-left: 10rem;
 
 }
-input{
+.table-input input{
     width: 20rem;
     height: 3.5rem;
     margin-left: 5rem;

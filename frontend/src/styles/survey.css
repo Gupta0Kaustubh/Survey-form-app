@@ -5,20 +5,19 @@
 .main{
     background-color: rgb(253, 253, 253);
     display: flex;
-    width: 98vw;
+   
     align-items: center;
     justify-content: center;
     background:linear-gradient(to right, #212529 50%, #343a40 50%);
     border-radius: 6px;
 }
 body{
-    /* background-color: #686c79; */
+
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 99vw;
-    height: 97vh;
-}
+
+  }
 .question{
     margin-top: 5rem;
     font-size: larger;

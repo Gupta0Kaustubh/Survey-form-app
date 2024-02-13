@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/firstuserinformation.css'
+  import '../styles/firstuserinformation.css'
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Survey from './Survey';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ const FirstUserInformation = () => {
   return (
       <div className='main'>
           <h1 className='heading'>Survey Form</h1>
-          <table>
+          <table className='table-input'>
               <tr>
                   <th className='headin'>Full Name : </th>
                   <td>
