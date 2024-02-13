@@ -3,10 +3,29 @@
     margin-left: 25%;
     margin-right:25%;
   transition: 500ms;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
   border-radius: 25px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       z-index: 4;
       transition: 500ms;
+}
+#signup-container .form-control{
+  background-color:#656c74;
+  color: #ffffff;
+  border-radius:25px;
+}
+#signup-container:hover{
+transform: scale(1.05);
+}
+.form-control::placeholder {
+  color: #ffffff; 
+}
+.ad-login{
+  min-width:100vw;
+  min-height : 100vh;
+  background-image: url(../assets/login-background.png);
+  background-repeat: no-repeat;
+  background-size: 60%;
+
 }

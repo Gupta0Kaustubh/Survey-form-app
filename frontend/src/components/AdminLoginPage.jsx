@@ -4,13 +4,12 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
-
 function AdminLoginPage() {
     // Your admin login form and logic go here
 
   const navigate = useNavigate();
     return (
-        
+        <div className='ad-login'>
         <div className='container align-items-center justify-content-center ' style={{paddingTop:"130px"}}>
              <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Comfortaa"></link>
@@ -25,11 +24,12 @@ function AdminLoginPage() {
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
       
-      <Button onClick={()=>{navigate("/admin-details")}} variant='btn btn-outline-light' type="submit">
+      <Button onClick={()=>{navigate("/admin-details")}} variant='btn btn-outline-light' type="submit" style={{borderRadius:"25px"}}>
         Submit
       </Button>
     </Form>
     
+         </div>
          </div>
     );
 }
