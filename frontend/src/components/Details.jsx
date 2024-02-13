@@ -11,7 +11,7 @@ export const Details = () => {
       
         const data = await response.json();
         setData(data);
-        console.log(data[0].response)
+        console.log(data)
     };
   
     fetchData();
