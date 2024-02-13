@@ -153,13 +153,15 @@ const Survey = ({response,setResponse}) => {
     setResponse(value)
     console.log(response)
     
-    const nextQues = number+1;
+
+
+    setTimeout(()=>{const nextQues = number+1;
     if(nextQues < questions.length){
       setNumber(nextQues)
     }
     else {
       setShowResult(true)
-    }
+    }},300)
   }
 
   const handleCommentChange = (e) => {
