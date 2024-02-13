@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+*{
+    font-family: 'Comfortaa', sans-serif;
+}
+.main{
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    width: 98vw;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(to right, #212529 50%, #343a40 50%);
+    border-radius: 6px;
+}
+body{
+    /* background-color: #686c79; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 97vh;
+}
+.question{
+    margin-top: 5rem;
+    font-size: larger;
+    font-weight: 500;
+    color: #8d8585;
+}
+   
+
+.answers{
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    /* margin: 10% 0; */
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    width: 65%;
+    flex-wrap: wrap;
+    margin-left: 10%;
+
+}
+.heading{
+    font-size: 3rem;
+  font-weight: bold;
+  color: #8d8585;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* .answer button{
+    background-color: rgb(39, 35, 35);
+    width: 18rem;
+    height: 2.3rem;
+    color: #f1ecec;
+    font-weight: 600;
+    border-radius: 25px;
+    border: 1px solid white;
+
+} */
+/* .answer button:hover{
+    cursor:pointer;
+    background-color: #686c79;
+} */
+.answer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+/* .answer div{
+    color: #f1ecec;
+} */
+
+/* .submitform {
+    width: 98vh;
+    height: 98vw;
+
+} */
+.textarea{
+    padding-left: 1rem;
+    padding-top: 1rem;
+    width: 45rem;
+    margin-top: 2rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+}
+.submit1{
+    color: rgb(112, 107, 107);
+    text-decoration: none;
+    font-weight: 600;
+}
+/* .submit2{
+    background-color: rgb(12, 229, 56);
+    height: 2.3rem;
+    width: 8.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 19rem;
+    padding-left: 0.9rem;
+    margin-bottom: 10rem;
+    cursor: pointer;
+} */
