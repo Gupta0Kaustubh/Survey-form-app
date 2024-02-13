@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/survey.css'
 import { Button } from 'react-bootstrap';
 import { FaArrowCircleLeft } from "react-icons/fa";
+import { addSurvey } from '../../utils/HandleApi';
 
 
 const questions = [{
@@ -146,6 +147,7 @@ const Survey = ({response,setResponse}) => {
     const selectedOption = questions[number].options.find(option => option.option === val.option);
     value[0][`question${number + 1}`] = selectedOption.option
     setResponse(value)
+    // addSurvey(value)
     console.log(response)
     
     if(isRight === true) {
@@ -176,6 +178,7 @@ const Survey = ({response,setResponse}) => {
     valuee[0].comment = comment; // Append textarea content to response
     setResponse(valuee);
     console.log(response)
+    addSurvey(valuee)
     alert("Thankyou !!! Your form has been submitted successfully !!!");
   }
 
