@@ -15,8 +15,6 @@ const surveySchema = new mongoose.Schema({
         question6:  String,
         question7:  String,
         question8:  String,
-        question9:  String,
-        question10:  String,
          comment:  String
             }
 })

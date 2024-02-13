@@ -56,3 +56,14 @@ input:hover{
 .link{
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 767px) {
+    .one{
+        display: flex;
+        flex-direction: column;
+    }
+    .butto{
+        margin-left:11rem;
+    }
+}
