@@ -24,7 +24,7 @@ const FirstUserInformation = ({response,setResponse}) => {
   return (
       <div className='main'>
           
-          <h1 className='heading'>Survey Form</h1>
+          <h1 className='heading' style={{color:"white"}}>Survey Form</h1>
           
           <form onSubmit={()=>navigate("/survey")}>
           <table className='table-input'>
@@ -44,7 +44,7 @@ const FirstUserInformation = ({response,setResponse}) => {
               <tr>
                   <th className='headin'>Phone number : </th>
                   <td>
-                      <input id="ph" onChange={(e)=>{valuechange(e)}} type="text" placeholder='Enter your mobile no.' required/>
+                      <input id="ph" onChange={(e)=>{valuechange(e)}} type="number"  placeholder='Enter your mobile no.' required/>
                   </td>
               </tr>
               </thead>

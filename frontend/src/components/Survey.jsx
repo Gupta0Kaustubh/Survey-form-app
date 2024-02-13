@@ -1,36 +1,47 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import '../styles/survey.css'
 import { Button } from 'react-bootstrap';
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { useSupplier } from './warehouse';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 const Survey = ({response,setResponse}) => {
   const supplier = useSupplier();
   const [number, setNumber] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [score, setScore] = useState(0);
   const [comment, setComment] = useState('');
-  const handleClick = (isRight, val) => {
+  const [selectedOptions, setSelectedOptions] = useState(Array(supplier.questions.length).fill(null));
+
+  const navigate = useNavigate()
+  const handleClick = (ind, val) => {
+
+    const updatedSelectedOptions = [...selectedOptions];
+    updatedSelectedOptions[number] = ind;
+    setSelectedOptions(updatedSelectedOptions);
 
     var value =response
    
     const selectedOption = supplier.questions[number].options.find(option => option.option === val.option);
-    value[0][`question${number + 1}`] = selectedOption.option
+    value[0][`questions${number + 1}`] = selectedOption.option
     setResponse(value)
     console.log(response)
     
-    if(isRight === true) {
-      setScore(score+1)
-    }
+   
+   setTimeout(()=>{
     const nextQues = number+1;
     if(nextQues < supplier.questions.length){
       setNumber(nextQues)
     }
     else {
       setShowResult(true)
-    }
+    }},300
+   )
+
+
   }
 
   const handleCommentChange = (e) => {
@@ -48,53 +59,71 @@ const Survey = ({response,setResponse}) => {
     var valuee = response;
     valuee[0].comment = comment; // Append textarea content to response
     setResponse(valuee);
-    console.log(response)
-    alert("Thankyou !!! Your form has been submitted successfully !!!");
+    toast.success("Thankyou, Redirecting to Home !");
+    setTimeout(()=>{
+      navigate("/")
+    },3000)
+
   }
 
   return (
     <div className='main'>
+       <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       {showResult === true ? 
         (<div className='submit form'>
           <h1 className='heading'>Additional Feedback</h1>
-            <div className='question'>
+            <p className='question'>
             What recommendations would you offer to improve our product/service?
-    </div>
+    </p>
     <div className="form-floating">
       <textarea className="form-control textarea" value={comment} onChange={handleCommentChange} placeholder="Leave a comment here" id="floatingTextarea"></textarea>
     </div>
-    <button onClick={thankyou} type="button" className="submit2 btn btn-secondary btn-lg"><Link className='submit1' to="/">SUBMIT FORM</Link></button>
+    <Button variant="outline-light" onClick={thankyou} type="button">SUBMIT</Button>
       </div> 
         ) : <div>
-          <div>
-    <h1 className='heading'>Survey Form</h1>
+          
+    
     <div>
       <div className='page_direction'>
-      <div className='quesandans'>
-      <div className='question'>
+     
+      <p className='question'>
       {number+1}. {supplier.questions[number].question}
-    </div>
+    </p>
     <div className='answers'>
     {supplier.questions[number].options.map((val, ind) => (
-      <div className='answer' key={ind}>
-        <div className='no'>{ind+1}</div>
-        <Button className='button' variant="outline-light" onClick={() => handleClick(val.isRight, val)}>{val.option}</Button>{' '}
-      </div>
+     
+        
+        <Button 
+          className={selectedOptions[number] === ind ? 'bgs' : ''}
+          variant="outline-light" 
+          onClick={() => handleClick(ind, val)}>{val.option}</Button>
+      
     ))}
       </div>
-    </div>
-    <div>
-      <FaArrowCircleLeft fontSize={40} onClick={goToPreviousQuestion} />
-    </div>
-      </div>
+    
       
+    
+{/*  */}
     
     </div>
     
     </div>
         </div>
     }
-
+  <div className='prev-container'>
+  <FaArrowCircleLeft className='prevbutton'  onClick={goToPreviousQuestion} />
+  </div>
     </div>
   )
 }

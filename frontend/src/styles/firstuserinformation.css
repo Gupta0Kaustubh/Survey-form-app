@@ -5,7 +5,7 @@
 }
 
 .main {
-    background-color: rgb(253, 253, 253);
+    
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -18,7 +18,7 @@
 .heading {
     font-size: 3rem;
     font-weight: bold;
-    color: #8d8585;
+    color: #ffffff;
     margin-bottom: 5rem;
     text-align: center;
     text-transform: uppercase;
@@ -27,7 +27,7 @@ table{
     width: 50vw;
 }
 .headin {
-    color: #697077;
+    color: #ffffff;
     margin-left: 10rem;
 
 }
@@ -46,7 +46,7 @@ table{
     padding-left: 10%;
 }
 input:hover{
-    background-color: #343a40;
+    
     cursor: pointer;
 }
 .arrow{
@@ -55,4 +55,11 @@ input:hover{
 }
 .link{
     cursor: pointer;
+}
+
+
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
