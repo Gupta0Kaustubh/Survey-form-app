@@ -5,9 +5,78 @@
     <link rel="icon"  href="./src/assets/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          background-color: #000000;
+      }
+
+      bubles {
+          border-radius: 100%;
+          position: absolute;
+          pointer-events: none;
+          background:  radial-gradient( circle at 75% 30%,
+  white 5px,
+  rgb(168, 213, 240) 8%,
+  rgb(246, 246, 250) 60%,
+  rgb(172, 179, 179) 100%
+);
+          border-radius: 51% 49% 48% 52%;
+          transform: translate(-50%, -50%);
+          animation: colorgen 8s infinite, float 2s infinite;
+      }
+@keyframes colorgen {
+0% {
+  opacity: 1;
+  transform: translatey(0px);
+}
+100% {
+  opacity: 0;
+  transform: translatey(-1000px);
+}
+}
+  </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <div id="bubbles"></div>
+    <div id="bubbles2"></div> <div id="bubbles3"></div>
+    <script>
+      let bubbleArr = [];
+
+      document.addEventListener("mousemove", (e) => {
+          let x = e.pageX;
+          let y = e.pageY;
+          let size = Math.random() * 40;
+          let isOverlapping = bubbleArr.some(bubble => {
+              let dx = bubble.x - x;
+              let dy = bubble.y - y;
+              let distance = Math.sqrt(dx * dx + dy * dy);
+              return distance < (bubble.size + size) * 0.7; 
+          });
+
+          if (!isOverlapping) {
+              let bubble = document.createElement("bubles");
+              bubble.style.width = 1 + size + "2px";
+              bubble.style.height = 1+ size + "2px";
+              bubble.style.left = x - size / 2 + "5px";
+              bubble.style.top = y - size / 2 + "5px";
+              document.body.appendChild(bubble);
+
+              bubbleArr.push({ x, y, size });
+
+              setTimeout(() => {
+                  bubble.remove();
+                  bubbleArr = bubbleArr.filter(b => b !== bubble);
+              }, 5000);
+          }
+      });
+  </script>
   </body>
 </html>
+

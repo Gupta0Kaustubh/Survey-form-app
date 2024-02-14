@@ -5,20 +5,21 @@
 }
 
 .main {
-    background-color: rgb(253, 253, 253);
+    
     display: flex;
     width: 100vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to right, #212529 50%, #343a40 50%);
+    background: rgb(87,134,126);
+background: linear-gradient(123deg, rgba(87,134,126,1) 0%, rgba(116,138,143,1) 53%, rgba(30,43,43,1) 100%);
     border-radius: 6px;
 }
 .heading {
     font-size: 3rem;
     font-weight: bold;
-    color: #8d8585;
+    color: #ffffff;
     margin-bottom: 5rem;
     text-align: center;
     text-transform: uppercase;
@@ -27,26 +28,26 @@ table{
     width: 50vw;
 }
 .headin {
-    color: #697077;
+    color: #ffffff;
     margin-left: 10rem;
 
 }
-input{
-    width: 20rem;
-    height: 3.5rem;
+.table-input input{
+    width:20rem;
+    height: 3rem;
     margin-left: 5rem;
     margin-bottom: 1.8rem;
     margin-top: 2rem;
     border-radius: 25px;
     border: 1px solid white;
-    background-color: #212529;
+   
     font-weight: 600;
     color: white;
     font-size: larger;
     padding-left: 10%;
 }
 input:hover{
-    background-color: #343a40;
+    
     cursor: pointer;
 }
 .arrow{
@@ -55,4 +56,28 @@ input:hover{
 }
 .link{
     cursor: pointer;
+}
+
+
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    .one{
+        display: flex;
+        flex-direction: column;
+    }
+    .butto{
+        margin-left:11rem;
+    }
+}
+.buton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,38 +1,59 @@
-import React from 'react'
-import '../styles/firstuserinformation.css'
+import React, { useState } from 'react'
+  import '../styles/firstuserinformation.css'
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Survey from './Survey';
 import { useNavigate } from 'react-router-dom';
-const FirstUserInformation = () => {
+import InputGroup from 'react-bootstrap/InputGroup';
+import { Button } from 'react-bootstrap';
+import { IoIosArrowForward } from "react-icons/io";
+const FirstUserInformation = ({response,setResponse}) => {
     const navigate = useNavigate()
+    var val =response
+    const valuechange=(e)=>{
+        if (e.target.id=="name"){
+            val[0].name=e.target.value
+        }else if (e.target.id=="mail"){
+            val[0].email=e.target.value
+        }else if (e.target.id=="ph"){
+            val[0].phone=e.target.value
+        }
+        setResponse(val)
+        console.log(response)
+    }
     
   return (
       <div className='main'>
-          <h1 className='heading'>Survey Form</h1>
-          <table>
-              <tr>
-                  <th className='headin'>Full Name : </th>
+          
+          <h1 className='heading' style={{color:"white"}}>Survey Form</h1>
+          
+          <form onSubmit={()=>navigate("/survey")}>
+          <table className='table-input'>
+              <thead>
+              <tr className='one'>
+                  <th className='headin' >Full Name : </th>
                   <td>
-                      <input type="text" placeholder='Enter your name' required/>
+                      <input id="name" onChange={(e)=>{valuechange(e)}} type="text" placeholder='Enter your name' required/>
                   </td>
               </tr>
-              <tr>
+              <tr className='one'>
                   <th className='headin'>Email Address : </th>
                   <td>
-                      <input type="email" placeholder='Enter your email id' required/>
+                      <input id="mail" onChange={(e)=>{valuechange(e)}} type="email" placeholder='Enter your email id' required/>
                   </td>
               </tr>
-              <tr>
+              <tr className='one'>
                   <th className='headin'>Phone number : </th>
                   <td>
-                      <input type="text" placeholder='Enter your mobile no.' required/>
+                      <input id="ph" onChange={(e)=>{valuechange(e)}} type="number"  placeholder='Enter your mobile no.' required/>
                   </td>
               </tr>
+              </thead>
           </table>
-          <div onClick={()=>{navigate("/survey")}} className='arrow'>
-              <BsArrowRightSquareFill color='white' fontSize={48} className='arrow' />
-          </div>
-          
+          <div className='buton'>
+          <Button className='butto' variant="outline-light" type="submit"  >
+              Proceed  <IoIosArrowForward /></Button>
+              </div>
+          </form>
     </div>
   )
 }

@@ -1,11 +1,15 @@
 const SurveyModel=require('../models/SurveyModel')
 
+//this will give us all the Survey
 module.exports.getSurvey = async (req,res) => {
-    const survey = await SurveyModel.find({}) //this will give us all the todo
+    const survey = await SurveyModel.find({}) 
     res.send(survey);
 }
 
+//this will help us to post the data
+
 module.exports.createSurvey = async (req,res) => {
+    console.log(req)
     const text = req.body
 
     SurveyModel

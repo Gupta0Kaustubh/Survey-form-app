@@ -5,35 +5,56 @@
 .main{
     background-color: rgb(253, 253, 253);
     display: flex;
-    width: 98vw;
     align-items: center;
     justify-content: center;
-    background:linear-gradient(to right, #212529 50%, #343a40 50%);
-    border-radius: 6px;
 }
-body{
-    /* background-color: #686c79; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 99vw;
-    height: 97vh;
-}
+
 .question{
     margin-top: 5rem;
     font-size: larger;
     font-weight: 500;
-    color: #8d8585;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-   
+
+.page_direction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;     
+    margin-left: 5%;
+    margin-right:5%;
+  transition: 500ms;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+  border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      z-index: 4;
+      transition: 500ms;
+}
+.page_direction:hover{
+    transform: scale(1.05);
+}
+.bgs{
+    background-color: rgb(228, 233, 238);
+    color: #343a40;
+}
+
+.prevbutton{
+    cursor: pointer;
+    float: right;
+    font-size: 50px;
+}
 
 .answers{
     display: flex;
-    justify-content: column;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
-    /* margin: 10% 0; */
+   
     margin-top: 2rem;
     padding-bottom: 2rem;
     width: 65%;
@@ -49,34 +70,11 @@ body{
   text-align: center;
   text-transform: uppercase;
 }
-/* .answer button{
-    background-color: rgb(39, 35, 35);
-    width: 18rem;
-    height: 2.3rem;
-    color: #f1ecec;
-    font-weight: 600;
-    border-radius: 25px;
-    border: 1px solid white;
 
-} */
-/* .answer button:hover{
-    cursor:pointer;
-    background-color: #686c79;
-} */
-.answer{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.answers Button{
+    width:350px
 }
-/* .answer div{
-    color: #f1ecec;
-} */
 
-/* .submitform {
-    width: 98vh;
-    height: 98vw;
-
-} */
 .textarea{
     padding-left: 1rem;
     padding-top: 1rem;
@@ -85,19 +83,22 @@ body{
     height: 6rem;
     margin-bottom: 1rem;
 }
-.submit1{
-    color: rgb(112, 107, 107);
-    text-decoration: none;
-    font-weight: 600;
-}
-/* .submit2{
-    background-color: rgb(12, 229, 56);
-    height: 2.3rem;
-    width: 8.5rem;
+.prev-container{
     display: flex;
-    align-items: center;
-    margin-left: 19rem;
-    padding-left: 0.9rem;
-    margin-bottom: 10rem;
-    cursor: pointer;
-} */
+    justify-content: flex-end ;
+    min-width: 95%;
+    top: 15%;
+    position: relative;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    .textarea{
+        width: 80vw;
+        margin-left: 2rem;
+    }
+    .submit2{
+        margin-left: 12rem;
+    }
+}
