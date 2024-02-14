@@ -2,8 +2,8 @@
     font-size: 30px;
 }
 .users{
-    background: rgb(87,134,126);
-background: linear-gradient(123deg, rgba(87,134,126,1) 0%, rgba(116,138,143,1) 53%, rgba(30,43,43,1) 100%);
+    /* background: rgb(87,134,126);
+background: linear-gradient(123deg, rgba(87,134,126,1) 0%, rgba(116,138,143,1) 53%, rgba(30,43,43,1) 100%); */
     border-radius: 25px;
     margin-left:50px;
     margin-right: 50px;

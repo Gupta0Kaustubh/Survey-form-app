@@ -4,7 +4,8 @@ import '../styles/AdminLogin.css'
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 function AdminLoginPage() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
@@ -18,12 +19,24 @@ function AdminLoginPage() {
         }else  if (username === 'yogeshwarang@jmangroup.com' && password === '600113') {
           navigate("/admin-details");
       } else {
-            alert('Invalid username or password');
+            toast.error('Invalid username or password');
         }
     };
 
     return (
         <div className='ad-login'>
+            <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
             <div className='container align-items-center justify-content-center' style={{ paddingTop: "130px" }}>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
                 <Form id="signup-container" className='p-5 mt-5' style={{ color: "white", width: "500px" }} onSubmit={handleSubmit}>

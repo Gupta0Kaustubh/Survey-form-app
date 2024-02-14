@@ -49,9 +49,10 @@ const FirstUserInformation = ({response,setResponse}) => {
               </tr>
               </thead>
           </table>
-          <Button className='butto' variant="outline-light" type="submit">
+          <div className='buton'>
+          <Button className='butto' variant="outline-light" type="submit"  >
               Proceed  <IoIosArrowForward /></Button>
-      
+              </div>
           </form>
     </div>
   )

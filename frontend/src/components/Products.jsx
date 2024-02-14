@@ -91,9 +91,7 @@ function Products({data,setData}) {
               <Button variant="secondary" onClick={()=>{setShow(false)}}>
                 Close
               </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button>
+              
             </Modal.Footer>
           </Modal>
         <Button onClick={()=>{modal("Product 2")}} variant="outline-light">Product 2</Button>

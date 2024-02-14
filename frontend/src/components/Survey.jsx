@@ -125,7 +125,7 @@ const Survey = ({response,setResponse}) => {
         </div>
     }
   <div className='prev-container'>
-  <FaArrowCircleLeft className='prevbutton'  onClick={goToPreviousQuestion} />
+  <FaArrowCircleLeft className='prevbutton' style={{color:"white"}}  onClick={goToPreviousQuestion} />
   </div>
     </div>
   )
