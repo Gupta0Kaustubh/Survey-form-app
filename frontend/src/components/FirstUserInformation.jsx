@@ -29,19 +29,19 @@ const FirstUserInformation = ({response,setResponse}) => {
           <form onSubmit={()=>navigate("/survey")}>
           <table className='table-input'>
               <thead>
-              <tr>
+              <tr className='one'>
                   <th className='headin' >Full Name : </th>
                   <td>
                       <input id="name" onChange={(e)=>{valuechange(e)}} type="text" placeholder='Enter your name' required/>
                   </td>
               </tr>
-              <tr>
+              <tr className='one'>
                   <th className='headin'>Email Address : </th>
                   <td>
                       <input id="mail" onChange={(e)=>{valuechange(e)}} type="email" placeholder='Enter your email id' required/>
                   </td>
               </tr>
-              <tr>
+              <tr className='one'>
                   <th className='headin'>Phone number : </th>
                   <td>
                       <input id="ph" onChange={(e)=>{valuechange(e)}} type="number"  placeholder='Enter your mobile no.' required/>
@@ -49,7 +49,7 @@ const FirstUserInformation = ({response,setResponse}) => {
               </tr>
               </thead>
           </table>
-          <Button variant="outline-light" type="submit">
+          <Button className='butto' variant="outline-light" type="submit">
               Proceed  <IoIosArrowForward /></Button>
       
           </form>

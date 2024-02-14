@@ -93,3 +93,13 @@ background: linear-gradient(123deg, rgba(87,134,126,1) 0%, rgba(116,138,143,1) 5
 }
 
 
+
+@media only screen and (max-width: 767px) {
+    .textarea{
+        width: 80vw;
+        margin-left: 2rem;
+    }
+    .submit2{
+        margin-left: 12rem;
+    }
+}

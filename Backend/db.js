@@ -1,22 +1,10 @@
-// const mongoose=require('mongoose')
-// const connectDB = async () =>{
-//     const URL="mongodb+srv://sumitkumar:Jvt5sSKlwdMho2I3@cluster0.uvyjppv.mongodb.net/?retryWrites=true&w=majority";
-
-//     const conn = await mongoose.connect(URL, {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//       });
-//       console.log(`MongoDB Coneected: ${conn.connection.host}`);
-//     };
-    
-//     module.exports = connectDB;
 
 const mongoose = require('mongoose');
-
+// Connecting to the database
 const connectDB = async () => {
   try {
-    // const URL = "mongodb+srv://sumitkumar:Jvt5sSKlwdMho2I3@cluster0.uvyjppv.mongodb.net/?retryWrites=true&w=majority";
-      const URL = "mongodb://localhost:27017/surveyform"
+    const URL = process.env.MONGODB_URI;
+      // const URL = "mongodb://localhost:27017/surveyform"
     const conn = await mongoose.connect(URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,

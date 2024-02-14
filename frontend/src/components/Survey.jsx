@@ -27,7 +27,7 @@ const Survey = ({response,setResponse}) => {
     var value =response
    
     const selectedOption = supplier.questions[number].options.find(option => option.option === val.option);
-    value[0][`questions${number + 1}`] = selectedOption.option
+    value[0][`question${number + 1}`] = selectedOption.option
     setResponse(value)
     // addSurvey(value)
     console.log(response)

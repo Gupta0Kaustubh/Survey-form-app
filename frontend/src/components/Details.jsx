@@ -4,9 +4,18 @@ import { IoEyeSharp } from "react-icons/io5";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import { useSupplier } from './warehouse';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Products from './Products.jsx';
+import {useNavigate} from 'react-router-dom'
 
 export const Details = () => {
-
+  const navigate = useNavigate()
+ 
+const [ps,setPs] = useState(false);
+const [af,setAf] = useState(true);
   const supplier = useSupplier();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -22,16 +31,42 @@ export const Details = () => {
     fetchData();
   }, []);
 
+ const all =()=>{
+  setAf(true);
+  setPs(false);
+ }
+ const specific =()=>{
+  setAf(false);
+  setPs(true);
+  console.log("sf",af,"sf",ps);
+ }
 
 
   return (
-    <div className='ad-container'>
-      <div className='header-admin'>
+
+    <div >
+    
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container>
+      <Navbar.Brand href="#home"><div className='header-admin'>
         <span style={{ color: "#bfc0c0" }}>A</span>dmin
-      </div>
-      <main>
-      <div className='container' >
-      <Accordion  defaultActiveKey="1" style={{width: "80%"}}>
+      </div></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+        <Nav.Link  onClick={()=>navigate("/")}>Home</Nav.Link>
+          <Nav.Link href="#home" onClick={  all}>All feedbacks</Nav.Link>
+          <Nav.Link  onClick={specific}>Product specific</Nav.Link>
+          
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+    <div className='ad-container'>  
+    {ps && <Products data={data} setData={setData}/>}
+    {af&& <main>
+      <div id ="accordian" className='container pt-4' >
+      <Accordion  defaultActiveKey="1" style={{width:"80%"}}>
       {data.map((response,index) => (
      
       <Accordion.Item className="border" eventKey={parseInt(index)}>
@@ -86,8 +121,9 @@ export const Details = () => {
     
       ))}</Accordion>
       </div>
-      </main>
+      </main>}
       
+    </div>
     </div>
   )
 }
