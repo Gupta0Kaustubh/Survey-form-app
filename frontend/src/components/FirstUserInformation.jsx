@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-  import '../styles/firstuserinformation.css'
+import React, { useState } from 'react';
+import '../styles/firstuserinformation.css';
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import Survey from './Survey';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +24,7 @@ const FirstUserInformation = ({response,setResponse}) => {
   return (
       <div className='main'>
           
-          <h1 className='heading'>Survey Form</h1>
+          <h1 className='heading' style={{color:"white"}}>Survey Form</h1>
           
           <form onSubmit={()=>navigate("/survey")}>
           <table className='table-input'>
@@ -44,14 +44,15 @@ const FirstUserInformation = ({response,setResponse}) => {
               <tr className='one'>
                   <th className='headin'>Phone number : </th>
                   <td>
-                      <input id="ph" onChange={(e)=>{valuechange(e)}} type="text" placeholder='Enter your mobile no.' required/>
+                      <input id="ph" onChange={(e)=>{valuechange(e)}} type="number"  placeholder='Enter your mobile no.' required/>
                   </td>
               </tr>
               </thead>
           </table>
-          <Button className='butto' variant="outline-light" type="submit">
+          <div className='buton'>
+          <Button className='butto' variant="outline-light" type="submit"  >
               Proceed  <IoIosArrowForward /></Button>
-      
+              </div>
           </form>
     </div>
   )

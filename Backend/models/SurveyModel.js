@@ -1,9 +1,9 @@
-//it will contain schema for the database or blueprint of how data will be stored or model
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
+// Define the schema for the survey data
 const surveySchema = new mongoose.Schema({
     response:
-    {
+    {   product: String,
         name: String,
         email: String,
         phone:  String,
@@ -19,6 +19,7 @@ const surveySchema = new mongoose.Schema({
             }
 })
 
-const Survey = mongoose.model('Survey',surveySchema);
+const Survey = mongoose.model('surveys',surveySchema);
 
+// Export the Survey model for use in other modules
 module.exports = Survey;
