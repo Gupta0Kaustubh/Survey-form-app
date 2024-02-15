@@ -70,7 +70,7 @@ const Survey = ({response,setResponse}) => {
   }
 
   return (
-    <div className='main'>
+    <div className='main container-fluid' id='survey-container'>
        <ToastContainer
         position="top-right"
         autoClose={2000}

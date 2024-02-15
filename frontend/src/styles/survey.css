@@ -3,7 +3,7 @@
     font-family: 'Comfortaa', sans-serif;
 }
 .main{
-    background-color: rgb(253, 253, 253);
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +42,10 @@
     background-color: rgb(228, 233, 238);
     color: #343a40;
 }
-
+html{
+    background: linear-gradient(123deg, rgba(87,134,126,1) 0%, rgba(116,138,143,1) 53%, rgba(30,43,43,1) 100%);
+    height: 100vh;
+}
 .prevbutton{
     cursor: pointer;
     float: right;
@@ -102,3 +105,4 @@
         margin-left: 12rem;
     }
 }
+

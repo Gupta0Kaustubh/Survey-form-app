@@ -22,7 +22,7 @@ const FirstUserInformation = ({response,setResponse}) => {
     }
     
   return (
-      <div className='main'>
+      <div className='main container-fluid' id="firstuser">
           
           <h1 className='heading' style={{color:"white"}}>Survey Form</h1>
           

@@ -44,8 +44,8 @@ const [af,setAf] = useState(true);
 
   return (
 
-    <div >
-    
+   
+    <>
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container>
       <Navbar.Brand href="#home"><div className='header-admin'>
@@ -62,6 +62,7 @@ const [af,setAf] = useState(true);
       </Navbar.Collapse>
     </Container>
   </Navbar>
+   <div id="containerdetails" className='container-fluid'>
     <div className='ad-container'>  
     {ps && <Products data={data} setData={setData}/>}
     {af&& <main>
@@ -125,6 +126,7 @@ const [af,setAf] = useState(true);
       
     </div>
     </div>
+    </>
   )
 }
 export default Details;

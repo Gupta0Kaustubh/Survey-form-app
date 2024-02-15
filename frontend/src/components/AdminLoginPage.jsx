@@ -24,6 +24,7 @@ function AdminLoginPage() {
     };
 
     return (
+        <div id="containerLogin">
         <div className='ad-login'>
             <ToastContainer
 position="top-right"
@@ -37,7 +38,7 @@ draggable
 pauseOnHover
 theme="dark"
 />
-            <div className='container align-items-center justify-content-center' style={{ paddingTop: "130px" }}>
+            <div className=' align-items-center justify-content-center' style={{ paddingTop: "130px" }}>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
                 <Form id="signup-container" className='p-5 mt-5' style={{ color: "white", width: "500px" }} onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -50,11 +51,13 @@ theme="dark"
                         <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </Form.Group>
 
-                    <Button variant='outline-light' type="submit" style={{ borderRadius: "25px" }}>
+                    <Button variant='outline-dark' type="submit" style={{ borderRadius: "25px" }}>
                         Submit
                     </Button>
                 </Form>
             </div>
+        </div>
+        
         </div>
     );
 }

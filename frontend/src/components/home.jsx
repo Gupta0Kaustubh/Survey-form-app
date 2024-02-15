@@ -17,9 +17,9 @@ export const Home = ({response}) => {
       navigate('/admin-login');
   };
   return (
-    <div className='container'>
+    <div className='container-fluid' id="homepage">
         
-<div className='header'>
+<div className='header' >
   <span style={{color:"#bfc0c0"}}>Y</span>our<span style={{color:"#bfc0c0"}}>Survey</span>
 </div>
 <div className='survey-quote'>
