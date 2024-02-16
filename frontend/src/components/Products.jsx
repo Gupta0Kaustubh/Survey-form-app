@@ -8,7 +8,6 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import { useSupplier } from './warehouse';
 
-import { useNavigate } from 'react-router-dom';
 function Products({data,setData}) {
     
     const [show, setShow] = useState(false);

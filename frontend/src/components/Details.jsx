@@ -1,24 +1,28 @@
 import { React, useEffect, useState } from 'react'
 import '../styles/admin-details.css'
-import { IoEyeSharp } from "react-icons/io5";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import { useSupplier } from './warehouse';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Products from './Products.jsx';
 import {useNavigate} from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 
 export const Details = () => {
   const navigate = useNavigate()
- 
+  const supplier = useSupplier();
+
 const [ps,setPs] = useState(false);
 const [af,setAf] = useState(true);
-  const supplier = useSupplier();
+ 
   const [data, setData] = useState([]);
+ 
   useEffect(() => {
+    if(!supplier.allow){
+    navigate("/admin-login")
+    }
     const fetchData = async () => {
 
       const response = await fetch("http://127.0.0.1:3000/");
@@ -39,6 +43,7 @@ const [af,setAf] = useState(true);
   setAf(false);
   setPs(true);
   console.log("sf",af,"sf",ps);
+  // console.log(supplier.allow)
  }
 
 
@@ -46,6 +51,8 @@ const [af,setAf] = useState(true);
 
    
     <>
+    
+    {supplier.allow && <>
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container>
       <Navbar.Brand href="#home"><div className='header-admin'>
@@ -54,10 +61,10 @@ const [af,setAf] = useState(true);
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-        <Nav.Link  onClick={()=>navigate("/")}>Home</Nav.Link>
-          <Nav.Link href="#home" onClick={  all}>All feedbacks</Nav.Link>
-          <Nav.Link  onClick={specific}>Product specific</Nav.Link>
-          
+       <Button variant="outline-dark" onClick={()=>navigate("/")}>Home</Button>
+          <Button variant="outline-dark" className="ms-3"onClick={  all}>All feedbacks</Button>
+          <Button variant="outline-dark" className="ms-3"   onClick={specific}>Product specific</Button>
+          <Button variant="outline-dark" className="ms-3"   onClick={()=>navigate("/")}>Logout</Button>
         </Nav>
       </Navbar.Collapse>
     </Container>
@@ -125,7 +132,7 @@ const [af,setAf] = useState(true);
       </main>}
       
     </div>
-    </div>
+    </div></>}
     </>
   )
 }

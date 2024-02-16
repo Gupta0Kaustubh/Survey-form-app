@@ -1,15 +1,14 @@
 #signup-container{
   color:black !important;
     text-align: center;     
-    margin-left: 25%;
-    margin-right:25%;
-  transition: 500ms;
+      transition: 500ms;
   backdrop-filter: blur(4px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
   border-radius: 25px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       z-index: 4;
       transition: 500ms;
+      margin-bottom:30%;
 }
 #signup-container .form-control{
 
@@ -23,7 +22,9 @@ transform: scale(1.05);
   color: black; 
 }
 .ad-login{
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width:100vw;
   min-height : 100vh;
   background-image: url(../assets/login-background.png);

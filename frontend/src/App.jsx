@@ -25,7 +25,7 @@ function App() {
     question8: "",
     comment: ""
         }])
-
+      const [allow,SetAllow]=useState(false)
         const sendDataToBackend = async () => {
           try {
             const responseFromBackend = await axios.post('/api/survey', response);

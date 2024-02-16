@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
   import '../styles/firstuserinformation.css'
-import { BsArrowRightSquareFill } from "react-icons/bs";
-import Survey from './Survey';
 import { useNavigate } from 'react-router-dom';
-import InputGroup from 'react-bootstrap/InputGroup';
 import { Button } from 'react-bootstrap';
 import { IoIosArrowForward } from "react-icons/io";
 const FirstUserInformation = ({response,setResponse}) => {

@@ -5,19 +5,22 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import {useSupplier} from '../components/warehouse.jsx'
 import "react-toastify/dist/ReactToastify.css";
 function AdminLoginPage() {
+    const supplier = useSupplier();
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
     const handleSubmit = (event) => {
-        event.preventDefault()
-        
+        event.preventDefault();
         if (username === 'kaustubhgupta@jmangroup.com' && password === '600113') {
+            supplier.setAllow(true)
             navigate("/admin-details");
         }else  if (username === 'yogeshwarang@jmangroup.com' && password === '600113') {
+            supplier.setAllow(true)
           navigate("/admin-details");
+          
       } else {
             toast.error('Invalid username or password');
         }

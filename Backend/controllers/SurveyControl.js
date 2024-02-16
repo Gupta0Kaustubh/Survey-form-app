@@ -9,14 +9,14 @@ module.exports.getSurvey = async (req,res) => {
 //this will help us to post the data
 
 module.exports.createSurvey = async (req,res) => {
-    console.log(req)
+    // console.log(req)
     const text = req.body
 
     SurveyModel
         .create({response:text})
         .then((data) => {
             console.log("Added Successfully...");
-            console.log(data);
+            // console.log(data);
             res.send(data);
         })
 }

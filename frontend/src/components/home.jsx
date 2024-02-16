@@ -3,11 +3,10 @@ import '../styles/home.css'
 import {Button} from 'react-bootstrap';
 import background from '../assets/home-back.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 export const Home = ({response}) => {
-
+  
   console.log(response);
 
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 const supplier = createContext();
 export const Warehouse = (props) => {
+  const [allow,setAllow]=useState(false)
     const questions = [{
         question: "How long have you been using our product/service?",
         options:[{
@@ -130,7 +131,7 @@ export const Warehouse = (props) => {
       }];
   return (
     <>
-    <supplier.Provider value={{questions}}>
+    <supplier.Provider value={{questions,setAllow,allow}}>
         {props.children}
     </supplier.Provider>
     </>
