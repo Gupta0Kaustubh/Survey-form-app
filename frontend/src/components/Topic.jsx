@@ -16,7 +16,7 @@ const Topic = ({response,setResponse}) => {
 
     return(
         <div className='container-fluid' id="topic">
-        <div className='header ' style={{ margin: '0px'}}>
+        <div  style={{ fontSize: '4rem'}}>
   <span style={{color:"#bfc0c0"}}>Y</span>our<span style={{color:"#bfc0c0"}}>Survey</span>
 </div>
         <div class="d-grid gap-2"  style={{ width:"20%"}}>
