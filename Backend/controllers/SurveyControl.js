@@ -1,22 +1,31 @@
-const SurveyModel=require('../models/SurveyModel')
+// Importing the SurveyModel
+const SurveyModel = require('../models/SurveyModel');
 
-//this will give us all the Survey
-module.exports.getSurvey = async (req,res) => {
-    const survey = await SurveyModel.find({}) 
+// This endpoint returns all surveys
+module.exports.getSurvey = async (req, res) => {
+    // Fetch all surveys from the database
+    const survey = await SurveyModel.find({});
+    
+    // Send the survey data as the response
     res.send(survey);
 }
 
-//this will help us to post the data
+// This endpoint allows posting new survey data
+module.exports.createSurvey = async (req, res) => {
+    // Extracting survey text from the request body
+    const text = req.body;
 
-module.exports.createSurvey = async (req,res) => {
-    // console.log(req)
-    const text = req.body
-
-    SurveyModel
-        .create({response:text})
+    // Creating a new survey record in the database
+    SurveyModel.create({ response: text })
         .then((data) => {
-            console.log("Added Successfully...");
-            // console.log(data);
+            // Log success message when survey is added
+            console.log("Survey added successfully...");
+            // Send the newly created survey data as the response
             res.send(data);
         })
+        .catch((error) => {
+            // Handle errors if any
+            console.error("Error adding survey:", error.message);
+            res.status(500).send("Internal Server Error");
+        });
 }

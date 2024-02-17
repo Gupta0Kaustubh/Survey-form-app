@@ -5,128 +5,128 @@ export const Warehouse = (props) => {
     const questions = [{
         question: "How long have you been using our product/service?",
         options:[{
-          option: "Less than a month",isRight:true
+          option: "Less than a month"
         }, {
-          option: "1 to 6 months",isRight:false
+          option: "1 to 6 months"
         }, {
-          option: "6 months to 1 year",isRight:false
+          option: "6 months to 1 year"
         },{
-          option: "1-3 years",isRight:false
+          option: "1-3 years"
         },{
-          option: "Not sure",isRight:false
+          option: "Not sure"
         },{
-          option: "Never used",isRight:false
+          option: "Never used"
         }]
       }, {
         question: "Overall, how satisfied are you with our product/service?",
         options:[{
-          option: "Very satisfied",isRight:false
+          option: "Very satisfied"
         }, {
-          option: "Satisfied",isRight:false
+          option: "Satisfied"
         }, {
-          option: "Neutral",isRight:true
+          option: "Neutral"
         },{
-          option: "Dissatisfied",isRight:true
+          option: "Dissatisfied"
         }, {
-          option: "Very dissatisfied",isRight:true
+          option: "Very dissatisfied"
         }, {
-          option: "Not sure",isRight:true
+          option: "Not sure"
         }]
       },
       {
         question: "What was the reason that attracted you to become our customer?",
         options:[{
-          option: "Brand value",isRight:false
+          option: "Brand value"
         }, {
-          option: "Marketing and promotion",isRight:true
+          option: "Marketing and promotion"
         }, {
-          option: "Variety of products",isRight:false
+          option: "Variety of products"
         }, {
-          option: "Word of mouth",isRight:false
+          option: "Word of mouth"
         }, {
-          option: "Quality of our products",isRight:false
+          option: "Quality of our products"
         }, {
-          option: "Pricing",isRight:false
+          option: "Pricing"
         }]
       },
       {
         question: "What are the reasons for which you might choose our product/service?",
         options:[{
-          option: "I already had it, but want to replace it",isRight:false
+          option: "I already had it, but want to replace it"
         }, {
-          option: "It serves a need of mine",isRight:true
+          option: "It serves a need of mine"
         }, {
-          option: "For quality reasons",isRight:false
+          option: "For quality reasons"
         }, {
-          option: "For durability reasons",isRight:false
+          option: "For durability reasons"
         }, {
-          option: "Because of the price",isRight:false
+          option: "Because of the price"
         }, {
-          option: "Other",isRight:false
+          option: "Other"
         }]
       },
       {
         question: "In your opinion, which of the following word describes us/our product the closest?",
         options:[{
-          option: "Faulty",isRight:false
+          option: "Faulty"
         }, {
-          option: "Low quality",isRight:true
+          option: "Low quality"
         }, {
-          option: "High quality",isRight:false
+          option: "High quality"
         }, {
-          option: "Durable",isRight:false
+          option: "Durable"
         }, {
-          option: "Economical",isRight:false
+          option: "Economical"
         }, {
-          option: "Expensive",isRight:false
+          option: "Expensive"
         }]
       },
       {
         question: "How easy is the transaction process with our company?",
         options:[{
-          option: "Very difficult",isRight:false
+          option: "Very difficult"
         }, {
-          option: "Difficult",isRight:true
+          option: "Difficult"
         }, {
-          option: "Regular",isRight:false
+          option: "Regular"
         }, {
-          option: "Easy",isRight:false
+          option: "Easy"
         }, {
-          option: "Very easy",isRight:false
+          option: "Very easy"
         }, {
-          option: "Other",isRight:false
+          option: "Other"
         }]
       },
       {
         question: "How likely are you to recommend [Product/Service] to other businesses?",
         options:[{
-          option: "Very Likely",isRight:false
+          option: "Very Likely"
         }, {
-          option: "Likely",isRight:true
+          option: "Likely"
         }, {
-          option: "Regular",isRight:false
+          option: "Regular"
         }, {
-          option: "Unlikely",isRight:false
+          option: "Unlikely"
         }, {
-          option: "very unlikely",isRight:false
+          option: "very unlikely"
         }, {
-          option: "Other",isRight:false
+          option: "Other"
         }]
       },
       {
         question: "Did the customer support team resolve all your product/service related queries?",
         options:[{
-          option: "Yes, by the company's representative",isRight:false
+          option: "Yes, by the company's representative"
         }, {
-          option: "No, it was resolved by me",isRight:true
+          option: "No, it was resolved by me"
         }, {
-          option: "No, the problem was never resolved",isRight:false
+          option: "No, the problem was never resolved"
         }, {
-          option: "Never contacted the support team",isRight:false
+          option: "Never contacted the support team"
         }, {
-          option: "In process",isRight:false
+          option: "In process"
         }, {
-          option: "Other",isRight:false
+          option: "Other"
         }]
       }];
   return (
