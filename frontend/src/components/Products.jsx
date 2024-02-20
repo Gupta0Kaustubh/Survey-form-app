@@ -52,8 +52,50 @@ function Products({ data, setData }) {
                 <Accordion.Item className="border" eventKey={parseInt(index)} key={index}>
                   <Accordion.Header>{response.response.name}</Accordion.Header>
                   <Accordion.Body>
-                    {/* Details displayed in cards */}
-                    {/* ... (Existing Card components) */}
+                  <Card className='mt-4'>
+                              <Card.Body>Mail</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.email}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>Phone number</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.phone}</Card.Body>
+                            </Card>
+                                <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[0].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question1}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[1].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question2}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[2].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question3}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[3].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question4}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[4].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question5}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[5].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question6}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[6].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question7}</Card.Body>
+                            </Card>
+                            <Card className='mt-4'>
+                              <Card.Body>{supplier.questions[7].question}</Card.Body>
+                              <Card.Body className='fw-bold'>{response.response.question8}</Card.Body>
+                            </Card>    
+                            <Card className='mt-4'>
+                              <Card.Body> What recommendations would you offer to improve our product/service?</Card.Body>
+                              <Card.Body  className='fw-bold'>{response.response.comment}</Card.Body>
+                            </Card> 
                   </Accordion.Body>
                 </Accordion.Item>
               ) : ' '
